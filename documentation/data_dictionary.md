@@ -65,14 +65,16 @@
  
  
  ## FARMER
-                          
-    | Column             | Type             | Constraints        | Description                  |
+ | Column             | Type             | Constraints        | Description                  |
 |--------------------|------------------|--------------------|------------------------------|
 | farmer_id          | NUMBER           | PK                 | Unique farmer ID             |
 | full_name          | VARCHAR2(100)    | NOT NULL           | Farmer name                  |
-| location           | VARCHAR2(100)    | NOT NULL           | Village/sector/district      |
+| location           | VARCHAR2(100)    | NOT NULL           | Village/Sector/District      |
 | phone              | VARCHAR2(20)     | UNIQUE             | Contact number               |
 | registration_date  | DATE             | DEFAULT SYSDATE    | When farmer was registered   |
+
+
+ 
 
 ## CROP_REPORT
 | Column        | Type            | Constraints        | Description             |
