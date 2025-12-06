@@ -108,17 +108,8 @@ crop-disease-alert-db/
 │
 └── README.md                          # This File
 
+```
 
-
-##  Entity Relationship Diagram
-
-    FARMER (1) -----< (M) CROP_REPORT (1) -----< (1) ALERT_LOG
-                                |
-                                |
-                                V
-                            DISEASES (1) ----< ALERT_LOG (M)
-
-    AUDIT_LOG (standalone) – logs system actions and errors
 
 
 ### Relationships:
@@ -243,7 +234,7 @@ crop-disease-alert-db/
 
 This project is for **academic purposes only** as part of PL/SQL coursework. All code and documentation are original work created for educational evaluation.
 
----
+
 
 ##  Verification
 
@@ -258,5 +249,5 @@ All components have been:
 Last Updated: December 2024 
 Oracle Database Version: 19c  
 Project Duration: 2 Weeks  
-Lines of Code: 1500*  
+Lines of Code: 1500  
 Database Objects: 20+
