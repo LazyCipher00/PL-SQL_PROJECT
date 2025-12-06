@@ -51,3 +51,54 @@ status
 error_message
 
  EXPLANATION: Used for restriction rules + exceptions logging.
+
+                                 DATA DICTIONARY
+     FARMER                            
+    | Column             | Type             | Constraints        | Description                  |
+|--------------------|------------------|--------------------|------------------------------|
+| farmer_id          | NUMBER           | PK                 | Unique farmer ID             |
+| full_name          | VARCHAR2(100)    | NOT NULL           | Farmer name                  |
+| location           | VARCHAR2(100)    | NOT NULL           | Village/sector/district      |
+| phone              | VARCHAR2(20)     | UNIQUE             | Contact number               |
+| registration_date  | DATE             | DEFAULT SYSDATE    | When farmer was registered   |
+
+CROP_REPORT
+| Column        | Type            | Constraints        | Description             |
+|---------------|-----------------|--------------------|-------------------------|
+| report_id     | NUMBER          | PK                 | Unique report ID        |
+| farmer_id     | NUMBER          | FK → FARMER        | Who reported            |
+| crop_type     | VARCHAR2(50)    | NOT NULL           | Type of crop            |
+| symptoms      | VARCHAR2(500)   | NOT NULL           | Symptom description     |
+| report_date   | DATE            | DEFAULT SYSDATE    | Auto timestamp          |
+
+DISEASES
+| Column           | Type             | Constraints                                                | Description                   |
+|------------------|------------------|------------------------------------------------------------|-------------------------------|
+| disease_id        | NUMBER           | PK                                                         | Unique disease ID             |
+| crop_type         | VARCHAR2(50)     | NOT NULL                                                   | Crop type affected            |
+| symptom_keywords  | VARCHAR2(300)    | NOT NULL                                                   | Keywords used for matching    |
+| treatment         | VARCHAR2(500)    | NOT NULL                                                   | Recommended treatment         |
+| risk_level        | VARCHAR2(10)     | CHECK (risk_level IN ('NORMAL','HIGH'))                   | Severity category             |
+
+ALERT_LOG
+| Column       | Type             | Constraints                                         | Description               |
+|--------------|------------------|-----------------------------------------------------|---------------------------|
+| alert_id     | NUMBER           | PK                                                  | Unique alert ID           |
+| report_id    | NUMBER           | FK → CROP_REPORT                                    | Source report             |
+| disease_id   | NUMBER           | FK → DISEASES (NULL allowed)                        | Matched disease if any    |
+| alert_status | VARCHAR2(20)     | NOT NULL                                            | MATCH FOUND / NO MATCH    |
+| severity     | VARCHAR2(10)     | CHECK (severity IN ('NORMAL','CRITICAL'))           | Alert level               |
+| alert_date   | DATE             | DEFAULT SYSDATE                                     | When alert was created    |
+
+AUDIT_LOG
+| Column          | Type            | Constraints         | Description                 |
+|-----------------|-----------------|---------------------|-----------------------------|
+| audit_id        | NUMBER          | PK                  | Unique audit ID             |
+| operation_type  | VARCHAR2(20)    | NOT NULL            | INSERT/UPDATE/DELETE        |
+| table_name      | VARCHAR2(50)    | NOT NULL            | Which table was affected    |
+| user_name       | VARCHAR2(50)    | NOT NULL            | Oracle user                 |
+| operation_date  | DATE            | DEFAULT SYSDATE     | Timestamp                   |
+| status          | VARCHAR2(20)    | NOT NULL            | SUCCESS/FAILED              |
+| error_message   | VARCHAR2(500)   | NULL                | Error text if failed        |
+
+                             
