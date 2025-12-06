@@ -64,7 +64,8 @@
  
  
  
- ## FARMER                         
+ ## FARMER
+                          
     | Column             | Type             | Constraints        | Description                  |
 |--------------------|------------------|--------------------|------------------------------|
 | farmer_id          | NUMBER           | PK                 | Unique farmer ID             |
