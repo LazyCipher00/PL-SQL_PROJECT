@@ -1,6 +1,6 @@
-NORMALIZED DATA STRUCTURE (3NF)
+# NORMALIZED DATA STRUCTURE (3NF)
 
-Table 1: FARMER
+## Table 1: FARMER
 | Column             | Description            |
 |--------------------|------------------------|
 | farmer_id (PK)     | Primary key            |
@@ -8,9 +8,9 @@ Table 1: FARMER
 | location           | Village/Sector/District|
 | phone              | Contact number         |
 | registration_date  | Date registered        |
-EXPLANATION: No repeating groups, no composite fields, no transitive dependencies → 3NF.
+### EXPLANATION: No repeating groups, no composite fields, no transitive dependencies → 3NF.
 
-Table 2: CROP_REPORT
+## Table 2: CROP_REPORT
 | Column                    | Description                     |
 |---------------------------|---------------------------------|
 | report_id (PK)            | Primary key                     |
@@ -18,9 +18,9 @@ Table 2: CROP_REPORT
 | crop_type                 | Type of crop                    |
 | symptoms                  | Reported symptoms               |
 | report_date               | Auto timestamp (SYSDATE)        |
-EXPLANATION: Symptom text belongs only to the report → 3NF
+### EXPLANATION: Symptom text belongs only to the report → 3NF
 
-Table 3: DISEASES
+## Table 3: DISEASES
 | Column            | Description                         |
 |-------------------|-------------------------------------|
 | disease_id (PK)   | Primary key                         |
@@ -28,9 +28,9 @@ Table 3: DISEASES
 | symptom_keywords  | Matching keywords                   |
 | treatment         | Recommended treatment               |
 | risk_level        | NORMAL / HIGH                       |
-EXPLANATION: Symptoms are reference keywords → 3NF.
+### EXPLANATION: Symptoms are reference keywords → 3NF.
 
-Table 4: ALERT_LOG
+## Table 4: ALERT_LOG
 | Column                                       | Description                    |
 |----------------------------------------------|--------------------------------|
 | alert_id (PK)                                | Primary key                    |
@@ -39,9 +39,9 @@ Table 4: ALERT_LOG
 | alert_status                                  | MATCH FOUND / NO MATCH         |
 | severity                                      | NORMAL / CRITICAL              |
 | alert_date                                    | Date of alert                  |
-EXPLANATION: Clean output table → 3NF.
+### EXPLANATION: Clean output table → 3NF.
 
-Table 5: AUDIT_LOG
+## Table 5: AUDIT_LOG
 | Column          | Description                    |
 |-----------------|--------------------------------|
 | audit_id (PK)   | Primary key                    |
@@ -51,7 +51,7 @@ Table 5: AUDIT_LOG
 | operation_date  | Timestamp                      |
 | status          | SUCCESS / FAILED               |
 | error_message   | Error details (if any)         |
-EXPLANATION: Used for restriction rules and exception logging.
+### EXPLANATION: Used for restriction rules and exception logging.
 
 
 
@@ -59,12 +59,12 @@ EXPLANATION: Used for restriction rules and exception logging.
 
 
 
-DATA DICTIONARY
+# DATA DICTIONARY
                                  
  
  
  
- FARMER                         
+ ## FARMER                         
     | Column             | Type             | Constraints        | Description                  |
 |--------------------|------------------|--------------------|------------------------------|
 | farmer_id          | NUMBER           | PK                 | Unique farmer ID             |
@@ -73,7 +73,7 @@ DATA DICTIONARY
 | phone              | VARCHAR2(20)     | UNIQUE             | Contact number               |
 | registration_date  | DATE             | DEFAULT SYSDATE    | When farmer was registered   |
 
-CROP_REPORT
+## CROP_REPORT
 | Column        | Type            | Constraints        | Description             |
 |---------------|-----------------|--------------------|-------------------------|
 | report_id     | NUMBER          | PK                 | Unique report ID        |
@@ -82,7 +82,7 @@ CROP_REPORT
 | symptoms      | VARCHAR2(500)   | NOT NULL           | Symptom description     |
 | report_date   | DATE            | DEFAULT SYSDATE    | Auto timestamp          |
 
-DISEASES
+## DISEASES
 | Column           | Type             | Constraints                                                | Description                   |
 |------------------|------------------|------------------------------------------------------------|-------------------------------|
 | disease_id        | NUMBER           | PK                                                         | Unique disease ID             |
@@ -91,7 +91,7 @@ DISEASES
 | treatment         | VARCHAR2(500)    | NOT NULL                                                   | Recommended treatment         |
 | risk_level        | VARCHAR2(10)     | CHECK (risk_level IN ('NORMAL','HIGH'))                   | Severity category             |
 
-ALERT_LOG
+## ALERT_LOG
 | Column       | Type             | Constraints                                         | Description               |
 |--------------|------------------|-----------------------------------------------------|---------------------------|
 | alert_id     | NUMBER           | PK                                                  | Unique alert ID           |
@@ -101,7 +101,7 @@ ALERT_LOG
 | severity     | VARCHAR2(10)     | CHECK (severity IN ('NORMAL','CRITICAL'))           | Alert level               |
 | alert_date   | DATE             | DEFAULT SYSDATE                                     | When alert was created    |
 
-AUDIT_LOG
+## AUDIT_LOG
 | Column          | Type            | Constraints         | Description                 |
 |-----------------|-----------------|---------------------|-----------------------------|
 | audit_id        | NUMBER          | PK                  | Unique audit ID             |
@@ -115,6 +115,6 @@ AUDIT_LOG
 
 
 
-LOGICAL DATA MODEL EXPLANATION
+## LOGICAL DATA MODEL EXPLANATION
 
 The logical model is based on five core entities: FARMER, CROP_REPORT, DISEASES, ALERT_LOG, and AUDIT_LOG. Farmers submit crop reports describing symptoms, and each report can generate one alert. The DISEASES entity stores the reference data used for matching symptoms. ALERT_LOG captures automated system responses, and AUDIT_LOG records system actions and errors for compliance and tracking. All relationships follow a one-to-many structure, fully normalized to 3NF to avoid redundancy and maintain data integrity. This logical model supports automated disease detection, high-risk alerting, auditing, and future BI reporting.

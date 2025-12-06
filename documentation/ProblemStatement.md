@@ -1,4 +1,4 @@
-### PROBLEM STATEMENT
+ # PROBLEM STATEMENT
 
 Project Title: Crop Disease Alert Database
 
@@ -24,7 +24,7 @@ Generate alerts for matched and high-risk diseases and store audit logs.
 
 Produce BI-ready data for trends, hotspots, and resource prioritization.
 
-## ### BI POTENTIAL:
+##  BI POTENTIAL:
 
 KPIs: disease incidence by crop, top diseases, hotspot mapping by location, trend over time.
 
