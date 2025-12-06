@@ -29,6 +29,7 @@ A comprehensive PL/SQL-based database system for managing crop disease detection
 
 ##  Project Structure
 
+```bash
 crop-disease-alert-db/
 │
 ├── database/                          # Database Implementation
@@ -92,20 +93,21 @@ crop-disease-alert-db/
 │   └── assumptions.md                 # Project Assumptions
 │
 ├── business_intelligence/             # Analytics & Reporting
-│   ├── kpi_definitions.md            # Key Performance Indicators
-│   ├── dashboard_mockups.png         # Dashboard Designs
-│   └── analytical_queries.sql        # Business Intelligence Queries
+│   ├── kpi_definitions.md             # Key Performance Indicators
+│   ├── dashboard_mockups.png          # Dashboard Designs
+│   └── analytical_queries.sql         # Business Intelligence Queries
 │
 ├── screenshots/                       # Execution Proof
-│   ├── phase_iv_tables/              # Table Creation
-│   ├── phase_v_data/                 # Data Insertion
-│   ├── phase_vi_plsql/               # PL/SQL Components
-│   └── phase_vii_advanced/           # Advanced Features
+│   ├── phase_iv_tables/               # Table Creation
+│   ├── phase_v_data/                  # Data Insertion
+│   ├── phase_vi_plsql/                # PL/SQL Components
+│   └── phase_vii_advanced/            # Advanced Features
 │
 ├── presentation/                      # Presentation Materials
 │   └── Crop_Disease_Alert_DB_Presentation.pptx
 │
 └── README.md                          # This File
+
 
 
 ##  Entity Relationship Diagram
