@@ -225,7 +225,7 @@ crop-disease-alert-db/
 
 ---
 
-## **📞 Contact Information**
+##  Contact Information
 
 **Student:** Muhammad Ahmad  
 **Email:** [ahmadmago61@gmail.com]  
