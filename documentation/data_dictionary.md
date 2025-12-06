@@ -52,8 +52,8 @@ error_message
 
  EXPLANATION: Used for restriction rules + exceptions logging.
 
-                                 DATA DICTIONARY
-     FARMER                            
+                                 
+ FARMER                         
     | Column             | Type             | Constraints        | Description                  |
 |--------------------|------------------|--------------------|------------------------------|
 | farmer_id          | NUMBER           | PK                 | Unique farmer ID             |
