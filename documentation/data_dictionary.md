@@ -1,4 +1,5 @@
-                    NORMALIZED DATA STRUCTURE (3NF)
+NORMALIZED DATA STRUCTURE (3NF)
+
 Table 1: FARMER
 
 farmer_id (PK)
