@@ -1,59 +1,69 @@
 NORMALIZED DATA STRUCTURE (3NF)
 
 Table 1: FARMER
-
-farmer_id (PK)
-full_name
-location
-phone
-registration_date
-
+| Column             | Description            |
+|--------------------|------------------------|
+| farmer_id (PK)     | Primary key            |
+| full_name          | Farmer full name       |
+| location           | Village/Sector/District|
+| phone              | Contact number         |
+| registration_date  | Date registered        |
 EXPLANATION: No repeating groups, no composite fields, no transitive dependencies → 3NF.
 
 Table 2: CROP_REPORT
-
-report_id (PK)
-farmer_id (FK → FARMER.farmer_id)
-crop_type
-symptoms
-report_date (default SYSDATE)
-
-EXPLANATION: Symptom text belongs only to the report → 3NF.
+| Column                    | Description                     |
+|---------------------------|---------------------------------|
+| report_id (PK)            | Primary key                     |
+| farmer_id (FK → FARMER)   | Links to farmer                 |
+| crop_type                 | Type of crop                    |
+| symptoms                  | Reported symptoms               |
+| report_date               | Auto timestamp (SYSDATE)        |
+EXPLANATION: Symptom text belongs only to the report → 3NF
 
 Table 3: DISEASES
-
-disease_id (PK)
-crop_type
-symptom_keywords
-treatment
-risk_level (“NORMAL”/“HIGH”)
+| Column            | Description                         |
+|-------------------|-------------------------------------|
+| disease_id (PK)   | Primary key                         |
+| crop_type         | Crop affected                       |
+| symptom_keywords  | Matching keywords                   |
+| treatment         | Recommended treatment               |
+| risk_level        | NORMAL / HIGH                       |
 
 EXPLANATION: Symptoms are reference keywords → 3NF.
 
- Table 4: ALERT_LOG
-
-alert_id (PK)
-report_id (FK → CROP_REPORT.report_id)
-disease_id (FK → DISEASES.disease_id, NULL if no match)
-alert_status (“MATCH FOUND”, “NO MATCH”)
-severity (“NORMAL”, “CRITICAL”)
-alert_date
+Table 4: ALERT_LOG
+| Column                                       | Description                    |
+|----------------------------------------------|--------------------------------|
+| alert_id (PK)                                | Primary key                    |
+| report_id (FK → CROP_REPORT.report_id)       | Source report                  |
+| disease_id (FK → DISEASES.disease_id, NULL)  | Matched disease or none        |
+| alert_status                                  | MATCH FOUND / NO MATCH         |
+| severity                                      | NORMAL / CRITICAL              |
+| alert_date                                    | Date of alert                  |
 
 EXPLANATION: Clean output table → 3NF.
 
 Table 5: AUDIT_LOG
+| Column          | Description                    |
+|-----------------|--------------------------------|
+| audit_id (PK)   | Primary key                    |
+| operation_type  | INSERT, UPDATE, DELETE         |
+| table_name      | Affected table                 |
+| user_name       | Oracle user                    |
+| operation_date  | Timestamp                      |
+| status          | SUCCESS / FAILED               |
+| error_message   | Error details (if any)         |
 
-audit_id (PK)
-operation_type
-table_name
-user_name
-operation_date
-status
-error_message
+EXPLANATION: Used for restriction rules and exception logging.
 
- EXPLANATION: Used for restriction rules + exceptions logging.
 
+
+
+DATA DICTIONARY
                                  
+ 
+ 
+ 
  FARMER                         
     | Column             | Type             | Constraints        | Description                  |
 |--------------------|------------------|--------------------|------------------------------|
