@@ -124,7 +124,7 @@ erDiagram
         DATE action_time
         VARCHAR2(200) details
     }
-```
+   ```
 
 
 ### Relationships:
