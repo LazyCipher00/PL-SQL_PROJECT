@@ -28,7 +28,6 @@ Table 3: DISEASES
 | symptom_keywords  | Matching keywords                   |
 | treatment         | Recommended treatment               |
 | risk_level        | NORMAL / HIGH                       |
-
 EXPLANATION: Symptoms are reference keywords → 3NF.
 
 Table 4: ALERT_LOG
@@ -40,7 +39,6 @@ Table 4: ALERT_LOG
 | alert_status                                  | MATCH FOUND / NO MATCH         |
 | severity                                      | NORMAL / CRITICAL              |
 | alert_date                                    | Date of alert                  |
-
 EXPLANATION: Clean output table → 3NF.
 
 Table 5: AUDIT_LOG
@@ -53,8 +51,10 @@ Table 5: AUDIT_LOG
 | operation_date  | Timestamp                      |
 | status          | SUCCESS / FAILED               |
 | error_message   | Error details (if any)         |
-
 EXPLANATION: Used for restriction rules and exception logging.
+
+
+
 
 
 
