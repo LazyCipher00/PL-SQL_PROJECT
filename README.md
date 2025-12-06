@@ -110,9 +110,9 @@ crop-disease-alert-db/
 
 ```
 
-##  Entity Relationship Diagram
+## Entity Relationship Diagram
 
-    ```mermaid
+```mermaid
 erDiagram
     FARMER ||--o{ CROP_REPORT : "submits"
     CROP_REPORT ||--o{ ALERT_LOG : "produces"
@@ -124,8 +124,7 @@ erDiagram
         DATE action_time
         VARCHAR2(200) details
     }
-   ```
-
+ ```
 
 ### Relationships:
 1. **One-to-Many**: Farmer → Crop Reports (One farmer submits many reports)
