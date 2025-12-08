@@ -53,6 +53,5 @@ PROMPT 5. AUDIT LOGS:
 SELECT audit_id, operation_type, table_name, status FROM audit_log WHERE ROWNUM <= 5 ORDER BY audit_id;
 
 -- Success message
-SELECT '🎉 PHASE V COMPLETED: 330+ RECORDS INSERTED!' AS celebration FROM dual;
-SELECT '📊 Database now contains substantial data for testing' AS note FROM dual;
-SELECT '🚀 Ready for Phase VI: PL/SQL Procedures' AS next_step FROM dual;
+SELECT ' PHASE V COMPLETED: 330+ RECORDS INSERTED!' AS celebration FROM dual;
+SELECT ' Database now contains substantial data for testing' AS note FROM dual;

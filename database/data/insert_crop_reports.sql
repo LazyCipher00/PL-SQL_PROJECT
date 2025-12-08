@@ -1,5 +1,5 @@
 -- ============================================
--- BATCH 3: INSERT 100 CROP REPORTS
+--  INSERT 100 CROP REPORTS
 -- ============================================
 
 BEGIN
@@ -56,6 +56,6 @@ BEGIN
     END LOOP;
     
     COMMIT;
-    DBMS_OUTPUT.PUT_LINE('✅ BATCH 3 COMPLETE: 100 crop reports inserted');
+    DBMS_OUTPUT.PUT_LINE('3 COMPLETE: 100 crop reports inserted');
 END;
 /

@@ -1,5 +1,5 @@
 -- ============================================
--- BATCH 2: INSERT 30 DISEASE RECORDS
+--  INSERT 30 DISEASE RECORDS
 -- Real crop diseases for Africa
 -- ============================================
 
@@ -128,4 +128,4 @@ INSERT INTO diseases (crop_type, symptom_keywords, treatment, risk_level) VALUES
 ('Sweet Potato', 'virus, mosaic patterns on leaves', 'Use virus-free planting material, control aphids', 'HIGH');
 
 COMMIT;
-SELECT '✅ BATCH 2 COMPLETE: 30 disease records inserted' AS status FROM dual;
+SELECT ' COMPLETE: 30 disease records inserted' AS status FROM dual;

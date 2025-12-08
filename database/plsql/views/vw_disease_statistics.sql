@@ -1,6 +1,5 @@
 -- View: vw_disease_statistics
--- Purpose: Disease analysis and statistics
--- Location: database/phase_vii_advanced/views/
+
 
 CREATE OR REPLACE VIEW vw_disease_statistics AS
 SELECT 

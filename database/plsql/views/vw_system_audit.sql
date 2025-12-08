@@ -1,6 +1,5 @@
 -- View: vw_system_audit
--- Purpose: System audit and operation tracking
--- Location: database/phase_vii_advanced/views/
+
 
 CREATE OR REPLACE VIEW vw_system_audit AS
 SELECT 

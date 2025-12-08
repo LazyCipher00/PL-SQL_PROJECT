@@ -1,6 +1,5 @@
 -- View: vw_alert_monitoring
--- Purpose: Real-time alert monitoring
--- Location: database/phase_vii_advanced/views/
+
 
 CREATE OR REPLACE VIEW vw_alert_monitoring AS
 SELECT 

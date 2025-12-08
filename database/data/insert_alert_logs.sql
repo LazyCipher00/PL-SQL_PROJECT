@@ -1,5 +1,5 @@
 -- ============================================
--- BATCH 4: INSERT 100 ALERT LOGS
+--  INSERT 100 ALERT LOGS
 -- ============================================
 
 BEGIN
@@ -53,6 +53,6 @@ BEGIN
     END LOOP;
     
     COMMIT;
-    DBMS_OUTPUT.PUT_LINE('✅ BATCH 4 COMPLETE: 100 alert logs inserted');
+    DBMS_OUTPUT.PUT_LINE(' COMPLETE: 100 alert logs inserted');
 END;
 /

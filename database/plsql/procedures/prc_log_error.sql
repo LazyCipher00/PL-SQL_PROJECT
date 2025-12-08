@@ -1,7 +1,6 @@
 -- Procedure: prc_log_error
 -- Purpose: Centralized error logging to audit_log
--- Author: Your Name
--- Date: DD-MON-YYYY
+
 
 CREATE OR REPLACE PROCEDURE prc_log_error(
     p_table_name IN VARCHAR2,

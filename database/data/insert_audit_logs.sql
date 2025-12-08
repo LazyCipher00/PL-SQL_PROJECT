@@ -1,5 +1,5 @@
 -- ============================================
--- BATCH 5: INSERT 50 AUDIT LOGS
+--  INSERT 50 AUDIT LOGS
 -- ============================================
 
 BEGIN
@@ -65,6 +65,6 @@ BEGIN
     END LOOP;
     
     COMMIT;
-    DBMS_OUTPUT.PUT_LINE('✅ BATCH 5 COMPLETE: 50 audit logs inserted');
+    DBMS_OUTPUT.PUT_LINE(' COMPLETE: 50 audit logs inserted');
 END;
 /

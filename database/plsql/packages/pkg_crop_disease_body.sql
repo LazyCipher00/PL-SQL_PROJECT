@@ -1,6 +1,5 @@
 -- Package Body: pkg_crop_disease
--- Purpose: Implementation of crop disease package
--- Location: database/phase_vii_advanced/packages/
+
 
 CREATE OR REPLACE PACKAGE BODY pkg_crop_disease AS
     

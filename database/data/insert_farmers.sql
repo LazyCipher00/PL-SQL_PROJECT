@@ -1,5 +1,5 @@
 -- ============================================
--- BATCH 1: INSERT 50 FARMERS
+--  INSERT 50 FARMERS
 -- ============================================
 
 SET SERVEROUTPUT ON;
@@ -70,4 +70,4 @@ INSERT INTO farmer (full_name, location, phone) VALUES ('Hamisi Rajab', 'Singida
 INSERT INTO farmer (full_name, location, phone) VALUES ('Rehema Kondo', 'Iringa', '0751234510');
 
 COMMIT;
-SELECT '✅ BATCH 1 COMPLETE: 50 farmers inserted' AS status FROM dual;
+SELECT ' COMPLETE: 50 farmers inserted' AS status FROM dual;

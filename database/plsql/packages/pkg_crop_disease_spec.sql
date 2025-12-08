@@ -1,6 +1,5 @@
 -- Package Specification: pkg_crop_disease
--- Purpose: Public interface for crop disease system
--- Location: database/phase_vii_advanced/packages/
+
 
 CREATE OR REPLACE PACKAGE pkg_crop_disease AS
     

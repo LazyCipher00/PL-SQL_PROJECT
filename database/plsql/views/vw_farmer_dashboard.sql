@@ -1,6 +1,5 @@
 -- View: vw_farmer_dashboard
--- Purpose: Comprehensive farmer reporting view
--- Location: database/phase_vii_advanced/views/
+
 
 CREATE OR REPLACE VIEW vw_farmer_dashboard AS
 SELECT 

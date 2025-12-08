@@ -1,5 +1,5 @@
 -- Table Statistics Analysis
--- Location: database/phase_vii_advanced/optimization/
+
 
 BEGIN
     -- Gather statistics for all tables

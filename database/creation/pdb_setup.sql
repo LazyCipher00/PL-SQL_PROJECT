@@ -9,6 +9,6 @@ CREATE PLUGGABLE DATABASE cropdb
 ALTER PLUGGABLE DATABASE cropdb OPEN;
 ALTER SESSION SET CONTAINER = cropdb;
 
--- For our project using Oracle XE, we work in single PDB
+
 */
 SELECT 'Oracle XE detected - using default database configuration' AS note FROM dual;

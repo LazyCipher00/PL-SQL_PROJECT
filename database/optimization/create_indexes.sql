@@ -1,5 +1,5 @@
 -- Performance Indexes
--- Location: database/phase_vii_advanced/optimization/
+
 
 -- Index for alert log date queries
 CREATE INDEX idx_alert_log_date ON alert_log(alert_date);
