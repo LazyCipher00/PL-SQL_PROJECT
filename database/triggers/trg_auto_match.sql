@@ -6,11 +6,13 @@ DECLARE
 BEGIN
     v_report_id := :NEW.report_id;
 
+    -- Call the procedure to match disease
     prc_match_disease(v_report_id);
 
 EXCEPTION
     WHEN OTHERS THEN
-        prc_log_error('CROP_REPORT', 'TRIGGER_AUTO_MATCH', USER,
-            'Trigger failed for report ' || v_report_id || ' | ' || SQLERRM);
+        -- Log any error that occurs
+        prc_log_error('CROP_REPORT', 'TRG_AUTO_MATCH', USER,
+                      'Trigger failed for report ' || v_report_id || ' | ' || SQLERRM);
 END trg_auto_match;
 /
